@@ -53,38 +53,15 @@ await airdrop.setMing(ming.address);
 const beforeBalance = await ming.balanceOf(walletAddress[99]);
 
 //成功的情况
-// await airdrop.connect(walletArr[99]).claimMing(proof);
+await airdrop.connect(walletArr[99]).claimMing(proof);
 
 //失败的情况(用数组外的地址去调用)
-await airdrop.claimMing(proof);
+// await airdrop.claimMing(proof);
 
 const afterBalance = await ming.balanceOf(walletAddress[99]);
 
 console.log('before balance:',ethers.utils.formatUnits(beforeBalance,18),
             ";after balance:",ethers.utils.formatUnits(afterBalance,18));
-
-
-
-
-
-
-
-
-
-  // const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  // const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  // const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
-
-  // const lockedAmount = hre.ethers.utils.parseEther("1");
-
-  // const Lock = await hre.ethers.getContractFactory("Lock");
-  // const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
-
-  // await lock.deployed();
-
-  // console.log(
-  //   `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
-  // );
 
 
 

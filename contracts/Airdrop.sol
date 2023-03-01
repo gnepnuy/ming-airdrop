@@ -1,14 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-import "./openzeppelin/utils/cryptography/MerkleProof.sol";
-import "./openzeppelin/access/Ownable.sol";
-import "./openzeppelin/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 
 contract Airdrop is Ownable{
-
-    uint8 public constant decimal = 18;
 
     bytes32 immutable public root;
     mapping(address => bool) public claimedAddress;

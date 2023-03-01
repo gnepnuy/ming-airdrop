@@ -1,10 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-import './openzeppelin/token/ERC20/ERC20.sol';
-contract Ming is ERC20{
+import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
 
-    uint8 public constant decimal = 18;
+contract Ming is ERC20{
 
     constructor(address airdrop)ERC20("Ming","Ming"){
         _mint(airdrop, 100_0000 ether);
