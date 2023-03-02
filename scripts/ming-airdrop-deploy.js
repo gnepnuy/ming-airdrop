@@ -63,8 +63,8 @@ const afterBalance = await ming.balanceOf(walletAddress[99]);
 console.log('before balance:',ethers.utils.formatUnits(beforeBalance,18),
             ";after balance:",ethers.utils.formatUnits(afterBalance,18));
 
-
-
+//成功的情况，再来领一次
+await airdrop.connect(walletArr[99]).claimMing(proof);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
